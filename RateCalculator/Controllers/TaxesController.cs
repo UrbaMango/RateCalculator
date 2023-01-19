@@ -19,7 +19,6 @@ namespace RateCalculator.Controllers
         {
             _taxService = taxService;
         }
-
         [HttpGet]
         [Route("GetTaxRate")]
         public async Task<ActionResult<TaxSchedule>> GetTaxRate(string municipality, DateTime taxDate)
