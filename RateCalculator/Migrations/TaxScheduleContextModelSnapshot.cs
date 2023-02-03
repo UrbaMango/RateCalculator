@@ -34,15 +34,14 @@ namespace RateCalculator.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TaxDate")
+                    b.Property<DateTime>("TaxDateEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TaxDateStart")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("TaxRate")
                         .HasColumnType("float");
-
-                    b.Property<string>("TaxTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

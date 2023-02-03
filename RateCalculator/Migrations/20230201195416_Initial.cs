@@ -18,8 +18,8 @@ namespace RateCalculator.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Municipality = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TaxTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TaxDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TaxDateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TaxDateEnd = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TaxRate = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>

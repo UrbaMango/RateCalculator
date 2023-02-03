@@ -12,7 +12,7 @@ using RateCalculator.Models;
 namespace RateCalculator.Migrations
 {
     [DbContext(typeof(TaxScheduleContext))]
-    [Migration("20230118214127_Initial")]
+    [Migration("20230201195416_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -37,15 +37,14 @@ namespace RateCalculator.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TaxDate")
+                    b.Property<DateTime>("TaxDateEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TaxDateStart")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("TaxRate")
                         .HasColumnType("float");
-
-                    b.Property<string>("TaxTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -5,8 +5,7 @@ namespace RateCalculator.Services
 {
     public interface ITaxService
     {
-        TaxSchedule FindTaxRate(string municipality, DateTime taxDate);
-        Task<ActionResult<TaxSchedule>> PostTaxSchedule(TaxSchedule taxSchedule);
-        bool ValidTaxTime(string taxTime);
+        Task<double?> GetTaxRate(string municipality, DateTime taxDate);
+        Task<TaxSchedule?> AddTaxSchedule(TaxSchedule taxSchedule);
     }
 }
